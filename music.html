@@ -52,21 +52,32 @@
           font-weight: bold;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+        .gallery-grid 
+        {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+          gap: 40px;
+          max-width: 1400px; /* Увеличаваме я, за да не е твърде тясно на 27 инча */
+          margin: 0 auto;    /* ТОВА ЦЕНТРИРА ЦЕЛИЯ БЛОК В СРЕДАТА */
+          padding: 20px;
+        }
+        header, .nav-bar 
+        {
+          text-align: center;
+          width: 100%;
+          margin-bottom: 30px;
         }
 
         /* КАРТАТА НА ПЕСЕНТА */
-        .song-card { 
-            background: #141414; 
-            padding: 15px; 
-            border: 1px solid #222; 
-            position: relative;
+        .song-card 
+        {
+         background: #1a1a1a;
+         padding: 20px;
+         border: 1px solid #333;
+         transition: 0.3s;
+         display: flex;
+         flex-direction: column;
+         align-items: center; /* Центрира съдържанието вътре в самата карта */
         }
 
         /* КОНТЕЙНЕР ЗА СНИМКАТА */
@@ -249,4 +260,6 @@
     <footer style="padding: 40px; color: #444;">© 2026 LILITH'S CURSE. All Rights Reserved.</footer>
 
 </body>
+</html>
+
 </html>
