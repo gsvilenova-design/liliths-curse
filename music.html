@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discography | Lilith's Curse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+          box-sizing: border-box; 
+          margin: 0; 
+          padding: 0;
+        }
+
+        body 
+        {
+          font-family: 'Cinzel', serif; 
+          background: #0f0f0f; 
+          color: #f4f4f4; 
+          text-align: center;
+        }
+
+        .header-main 
+        {
+          background: #1a1a1a; 
+          padding: 30px 10px; 
+          border-bottom: 3px solid #ff0000;}
+
+        .band-name 
+        {
+          font-size: 3rem; 
+          color: #ff0000; 
+          font-weight: 900; 
+          letter-spacing: 5px;
+        }
+
+        .nav-bar 
+        {
+          background: rgba(26,26,26,0.95); 
+          padding: 20px; 
+          border-bottom: 1px solid #222; 
+          margin-bottom: 30px;
+        }
+
+        .nav-link 
+        {
+          margin: 0 15px; 
+          color: #fff; 
+          text-decoration: none; 
+          text-transform: uppercase; 
+          font-weight: bold;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* КАРТАТА НА ПЕСЕНТА */
+        .song-card { 
+            background: #141414; 
+            padding: 15px; 
+            border: 1px solid #222; 
+            position: relative;
+        }
+
+        /* КОНТЕЙНЕР ЗА СНИМКАТА */
+        .img-container {
+           width: 100%;
+           aspect-ratio: 1/1; /* кутиите стават еднакви */
+           background: #000;  /* запълва с фон ако снимката е тясна */
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative;
+           z-index: 1;
+           border: 1px solid #333;
+           overflow: visible; /*снимката излиза навън*/
+}
+
+        .img-container img {
+           max-width: 100%;
+           max-height: 100%;
+           width: auto;
+           height: auto;
+           object-fit: contain; /*тука съм сигурна че нищо не се реже */
+           transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           position: relative;
+}
+
+        /*ИЗСКАЧАНЕ */
+        .img-container:hover {
+           z-index: 999; /* Издига я над заглавията и съседните кутии */
+}
+
+        .img-container:hover img {
+           transform: scale(1.4); 
+           box-shadow: 0 20px 50px rgba(0,0,0,1), 0 0 15px rgba(255,0,0,0.3);
+           border: 1px solid #ff0000;
+}
+
+        /* ДА НЕ ПРЕЧАТ */
+        .song-title {
+           color: #ff0000;
+           font-size: 1.1rem;
+           margin: 15px 0;
+           position: relative;
+           z-index: 0; 
+}
+
+        .song-title 
+        { 
+          color: #ff0000; 
+          font-size: 1.1rem; 
+          margin: 15px 0; 
+        }
+
+        audio 
+        { 
+          width: 100%; 
+          filter: invert(100%); 
+          position: relative; 
+          z-index: 1; 
+        }
+
+        .back-btn 
+        { 
+          display: inline-block; 
+          padding: 15px 35px; 
+          border: 2px solid #ff0000; 
+          color: #fff; 
+          text-decoration: none; 
+          border-radius: 50px; 
+          font-weight: bold; 
+          margin: 60px 0; 
+          transition: 0.3s; 
+        }
+
+        .back-btn:hover 
+        { 
+          background: #ff0000; 
+          color: #000; 
+        }
+
+        @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="header-main">
+        <div class="band-name">LILITH'S CURSE</div>
+        <div style="color:#666; letter-spacing:2px">DISCOGRAPHY</div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">Bio</a>
+        <a href="index.html#contact" class="nav-link">Booking</a>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="song-card">
+            <div class="img-container"><img src="art-devil.jpg"></div>
+            <div class="song-title">The Devil and Me</div>
+            <audio controls src="devil.mp3"></audio>
+        </div>
+
+      <div class="song-card">
+            <div class="img-container"><img src="art-shatter.png"></div>
+            <div class="song-title">Shatter Me</div>
+            <audio controls src="shatter.mp3"></audio>
+        </div>
+
+      <div class="song-card">
+            <div class="img-container"><img src="art-monster.png"></div>
+            <div class="song-title">The Monster In Me</div>
+            <audio controls src="monster.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-burn.png"></div>
+            <div class="song-title">Let It Burn</div>
+            <audio controls src="burn.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-road.png"></div>
+            <div class="song-title">Walking My Road Alone</div>
+            <audio controls src="road.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-reach.png"></div>
+            <div class="song-title">Until I Reach You</div>
+            <audio controls src="reach.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-reborn.png"></div>
+            <div class="song-title">Reborn In Flame</div>
+            <audio controls src="reborn.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-rise.png"></div>
+            <div class="song-title">I Will Rise</div>
+            <audio controls src="rise.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-mansion.png"></div>
+            <div class="song-title">Mansion</div>
+            <audio controls src="mansion.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-become.png"></div>
+            <div class="song-title">Do you like what I’ve become!</div>
+            <audio controls src="become.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-sorry.jpg"></div>
+            <div class="song-title">It Wasn’t Supposed to Be This Way</div>
+            <audio controls src="sorry.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-face.png"></div>
+            <div class="song-title">Face to face</div>
+            <audio controls src="face.mp3.mp3"></audio>
+        </div>
+
+        <div class="song-card">
+            <div class="img-container"><img src="art-cage.png"></div>
+            <div class="song-title">Cage of my mind</div>
+            <audio controls src="cage.mp3.mp3"></audio>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">Return to Main Site</a>
+
+    <footer style="padding: 40px; color: #444;">© 2026 LILITH'S CURSE. All Rights Reserved.</footer>
+
+</body>
+</html>

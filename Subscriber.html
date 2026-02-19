@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | Lilith's Curse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * 
+        { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body 
+        { 
+            font-family: 'Cinzel', serif; 
+            background: #0f0f0f; 
+            color: #fff; 
+        }
+        
+        .form-page-wrapper { 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+        
+        .subscription-card { 
+            background: #141414; 
+            padding: 40px; 
+            border: 1px solid #333; 
+            width: 100%; 
+            max-width: 450px; 
+            text-align: center;
+        }
+
+        /* --- СТИЛ ЗА ЧЕРВЕНОТО СЪОБЩЕНИЕ --- */
+        .thanks-msg {
+            display: none; /* Скрито по подразбиране */
+            color: #ff0000;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 20px 0;
+            border: 2px solid #ff0000;
+            padding: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Магията: Когато URL-ът завършва на #done, показваме съобщението и крием формата */
+        #done:target .thanks-msg { display: block; }
+        #done:target form { display: none; }
+        #done:target .join-title { display: none; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0px #ff0000; }
+            50% { box-shadow: 0 0 20px #ff0000; }
+            100% { box-shadow: 0 0 0px #ff0000; }
+        }
+
+        .form-input-field, .form-select-field 
+        { 
+            width: 100%; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            background: #222; 
+            border: 1px solid #444; 
+            color: #fff; 
+            font-family: inherit; 
+            outline: none;
+        }
+        
+        .gender-selector-box 
+        { 
+            text-align: left; 
+            padding: 15px; 
+            border: 1px solid #222; 
+            margin-bottom: 20px; 
+        }
+        
+        .subscribe-btn 
+        { 
+            width: 100%; 
+            padding: 15px; 
+            background: none; 
+            color: #fff; 
+            border: 2px solid #ff0000; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            font-family: inherit; 
+            transition: 0.3s; 
+            border-radius: 50px;
+        }
+        
+        .subscribe-btn:hover 
+        { background: #ff0000; 
+            color: #000; 
+        }
+        
+        .back-link 
+        { 
+            margin-top: 30px; 
+            display: block; 
+            color: #666; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+        }
+        
+    </style>
+</head>
+<body id="done"> <div class="form-page-wrapper">
+        <div class="subscription-card">
+            
+            <div class="thanks-msg">
+                WELCOME TO THE CULT!<br>
+                <span style="font-size: 0.8rem; color: #fff;">(Subscription Successful)</span>
+            </div>
+
+            <div class="join-title" style="font-size: 1.8rem; margin-bottom: 30px; color: #ff0000; font-weight: 900; letter-spacing: 2px;">JOIN THE CULT</div>
+            
+            <form action="#done" method="GET">
+                <input type="text" name="nickname" placeholder="NICKNAME" required class="form-input-field">
+                <input type="email" name="email" placeholder="EMAIL" required class="form-input-field">
+                
+                <div style="text-align: left; color: #ff0000; font-size: 0.8rem; margin-bottom: 5px;">FAVORITE SONG:</div>
+                <select name="favorite_song" class="form-select-field" required>
+                    <option value="" disabled selected>SELECT A SONG</option>
+                    <option value="burn">Devil In Me</option>
+                    <option value="burn">Shatter Me</option>
+                    <option value="burn">The Monster In Me</option>
+                    <option value="burn">Let It Burn</option>
+                    <option value="road">Walking My Road Alone</option>
+                    <option value="reach">Until I Reach You</option>
+                    <option value="reborn">Reborn In Flame</option>
+                    <option value="rise">I Will Rise</option>
+                    <option value="mansion">Mansion</option>
+                    <option value="become">Do you like what I’ve become!</option>
+                    <option value="sorry">It Wasn’t Supposed to Be This Way</option>
+                    <option value="face">Face to face</option>
+                    <option value="cage">Cage of my mind</option>
+                </select>
+
+                <div class="gender-selector-box">
+                    <div style="color: #ff0000; font-size: 0.8rem; margin-bottom: 10px;">GENDER:</div>
+                    <label style="display:block; margin-bottom:10px; cursor:pointer;">
+                        <input type="radio" name="gender" value="male" required> Male
+                    </label>
+                    <label style="display:block; cursor:pointer;">
+                        <input type="radio" name="gender" value="female"> Female
+                    </label>
+                </div>
+
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+            
+            <a href="index.html" class="back-link">Return to Main Site</a>
+        </div>
+    </div>
+
+</body>
+</html>
